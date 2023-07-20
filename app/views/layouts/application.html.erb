@@ -23,18 +23,37 @@
             <!--flex-rowで横向きに-->
 
           <ul class="navbar-nav ml-auto flex-row">
+
            <li class="nav-item">
             <a class="nav-link text-light" href="/">Home</a>
            </li>
-           <li class="nav-item">
-            <a class="nav-link text-light" href="/homes/about">About</a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link text-light" href="/users/sign_up">Sign up</a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link text-light" href="/users/sign_in">Log in</a>
-           </li>
+           <% if user_signed_in? %>
+            <li class="nav-item">
+             <a class="nav-link text-light" href="/users">Users</a>
+            </li>
+
+            <li class="nav-item">
+             <a class="nav-link text-light" href="/books">Books</a>
+            </li>
+           <!--仮-->
+             <li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+             </li>
+           <% else %>
+
+            <li class="nav-item">
+             <a class="nav-link text-light" href="/homes/about">About</a>
+            </li>
+
+            <li class="nav-item">
+             <a class="nav-link text-light" href="/users/sign_up">Sign up</a>
+            </li>
+
+            <li class="nav-item">
+             <a class="nav-link text-light" href="/users/sign_in">Log in</a>
+            </li>
+           <% end %>
+
           </ul>
          </div>
         </div>
