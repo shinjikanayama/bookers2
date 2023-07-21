@@ -1,71 +1,27 @@
-<!--右側作成登録したあと表示-->
-
-<script src="https://kit.fontawesome.com/52ec04519a.js" crossorigin="anonymous"></script>
-<div class="row">
-  <div class="col-md-3">
-    <h2>User info</h2>
-    <%= image_tag @user.get_profile_image(100,100) %>
-
-    <table class="table">
-      <tbody>
-        <tr>
-          <th>name</th>
-          <th><%= @user.name %></th>
-        </tr>
-        <tr>
-          <th>introduction</th>
-          <!--<th></th>-->
-        </tr>
-
-      </tbody>
-    </table>
-
-    <div class="row">
-      <a class="btn btn-outline-secondary btn-block edit_user_id" href="/users/edit">
-        <i class="fa-solid fa-user-gear"></i>
-      </a>
-    </div>
-
-
-
-   <h2>New book</h2>
-
-   <%= form_with model: Book.new do |f| %>
-    <h4>Title</h4>
-   <%= f.text_field :title %>
-
-    <h4>Opinion</h4>
-   <%= f.text_area :body %>
-
-
-
-   <%= f.submit 'Create Book' %>
-   <% end %>
-
- </div>
+<%= render 'book', books: @books %>
 
  <div class="col-md-8 offset-md-1">
    <h2>Book detail</h2>
    <table class="table">
      <tbody>
        <tr>
-         <tb>
+         <td>
            <%= image_tag @user.get_profile_image(100,100) %>
-         </tb>
-         <tb>
+         </td>
+         <td>
            <a><%= @book.title %></a>
-         </tb>
-         <tb>
+         </td>
+         <td>
            <%= @book.body %>
-          </tb>
+          </td>
 
-         <tb>
+         <td>
            <a class="btn-sm btn-success" href="/books/<%= @book.id %>/edit">
              Edit
            </a>
-         </tb>
+         </td>
          <td>
-          <%= link_to "Destroy",book_path(@book.id),method: :delete,"data-confirm" => "本当に消しますか？" %>
+           <a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger" rel="nofollow" data-method="delete" href="/books/<%= @book.id %>">Destroy</a>
          </td>
        </tr>
      </tbody>
