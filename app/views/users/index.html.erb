@@ -19,13 +19,13 @@
 
        <tr>
          <td>
-           <%= image_tag @user.get_profile_image(100,100) %>
+           <%= image_tag user.get_profile_image(100,100) %>
          </td>
          <td>
-           <%= @user.name %>
+           <%= user.name %>
          </td>
          <td>
-            <%= link_to "/users/#{@user.id}" do %>
+            <%= link_to "/users/#{user.id}" do %>
              Show
            <% end %>
          </td>

@@ -22,11 +22,13 @@
 
             <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 　　　　　　　<ul class="navbar-nav ml-auto">
+
+
+               <% if user_signed_in? %>
                 <li class="nav-item">
                  <a class="nav-link text-light" href="/">Home</a>
                 </li>
 
-               <% if user_signed_in? %>
                 <li class="nav-item">
                  <a class="nav-link text-light" href="/users">Users</a>
                 </li>
@@ -39,6 +41,10 @@
                  <a class="nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out">Log out</a>
                 </li>
                 <% else %>
+                 <li class="nav-item">
+                 <a class="nav-link text-light" href="/">Home</a>
+                </li>
+
                 <li class="nav-item">
                  <a class="nav-link text-light" href="/homes/about">About</a>
                 </li>
@@ -51,6 +57,7 @@
                  <a class="nav-link text-light" href="/users/sign_in">Log in</a>
                 </li>
                 <% end %>
+
               </ul>
             </nav>
          </div>
@@ -59,6 +66,7 @@
     </header>
 
   <main class="mb-auto">
+    <%= flash[:notice] %>
     <%= yield %>
   </main>
 
