@@ -18,6 +18,8 @@
            <%= @book.body %>
           </td>
 
+          <% if @book.user == current_user %>
+
          <td>
            <a class="btn-sm btn-success" href="/books/<%= @book.id %>/edit">
              Edit
@@ -26,6 +28,7 @@
          <td>
            <a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger" rel="nofollow" data-method="delete" href="/books/<%= @book.id %>">Destroy</a>
          </td>
+           <% end %>
        </tr>
      </tbody>
    </table>
