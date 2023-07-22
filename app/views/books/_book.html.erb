@@ -1,26 +1,25 @@
-
 <script src="https://kit.fontawesome.com/52ec04519a.js" crossorigin="anonymous"></script>
 <div class="row">
   <div class="col-md-3">
     <h2>User info</h2>
-    <%= image_tag @user.get_profile_image(100,100) %>
+    <%= image_tag user.get_profile_image(100,100) %>
 
     <table class="table">
       <tbody>
         <tr>
           <th>name</th>
-          <th><%= @user.name %></th>
+          <th><%= user.name %></th>
         </tr>
         <tr>
           <th>introduction</th>
-          <th><%= @user.introduction %></th>
+          <th><%= user.introduction %></th>
         </tr>
 
       </tbody>
     </table>
 
     <div class="row">
-      <a class="btn btn-outline-secondary btn-block edit_user_id" href="/users/<%= @user.id %>/edit">
+      <a class="btn btn-outline-secondary btn-block edit_user_id" href="/users/<%= user.id %>/edit">
         <i class="fa-solid fa-user-gear"></i>
       </a>
     </div>

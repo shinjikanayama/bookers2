@@ -9,7 +9,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @user = current_user
+    @user = @book.user
   end
 
   def edit
@@ -30,8 +30,8 @@ class BooksController < ApplicationController
        @books = Book.all
        @user = current_user
        render :index
-       
-    end 
+
+    end
 
   end
 
@@ -50,8 +50,8 @@ class BooksController < ApplicationController
       # 調べて入力「再表示する」
        flash.now[:alert]
        render :edit
-    end 
-      
+    end
+
   end
 
 

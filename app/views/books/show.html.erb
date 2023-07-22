@@ -1,4 +1,4 @@
-<%= render 'book', books: @books %>
+<%= render 'book', user: @user %>
 
  <div class="col-md-8 offset-md-1">
    <h2>Book detail</h2>
@@ -6,7 +6,10 @@
      <tbody>
        <tr>
          <td>
-           <%= image_tag @user.get_profile_image(100,100) %>
+           <a href="<%= user_path(@user) %>">
+           　<%= image_tag @user.get_profile_image(100,100) %> <br>
+           　<%= @user.name %>
+           </a>
          </td>
          <td>
            <a><%= @book.title %></a>

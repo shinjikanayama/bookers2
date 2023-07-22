@@ -1,6 +1,6 @@
 <!--bookの右側-->
 <% if @book.errors.any? %>
- <%= @book.errors.count %> 
+ <%= @book.errors.count %>
 
  <ul>
    <% @book.errors.full_messages.each do |message| %>
@@ -10,7 +10,7 @@
 <% end %>
 
 
-<%= render 'book', books: @books %>
+<%= render 'book', user: @user %>
 
 
 
