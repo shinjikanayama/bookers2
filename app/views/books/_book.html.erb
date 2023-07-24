@@ -1,4 +1,5 @@
 <script src="https://kit.fontawesome.com/52ec04519a.js" crossorigin="anonymous"></script>
+<div class="container">
 <div class="row">
   <div class="col-md-3">
     <h2>User info</h2>
@@ -20,7 +21,7 @@
 
     <div class="row">
       <a class="btn btn-outline-secondary btn-block edit_user_id" href="/users/<%= user.id %>/edit">
-        <i class="fa-solid fa-user-gear"></i>
+        <i class="fas fa-user-cog"></i>
       </a>
     </div>
 
@@ -35,9 +36,11 @@
     <h4>Opinion</h4>
    <%= f.text_area :body %>
 
-
-
-   <%= f.submit 'Create Book' %>
+    <div class="form-group">
+      <input type="submit" nama="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
+    </div>
    <% end %>
 
  </div>
+
+

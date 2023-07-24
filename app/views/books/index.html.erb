@@ -32,7 +32,10 @@
 
        <tr>
          <td>
-           <%= image_tag @user.get_profile_image(100,100) %>
+          <%= link_to user_path(book.user) do %>
+           <%= image_tag book.user.get_profile_image(100,100) %>
+          <% end %>
+
          </td>
          <td>
            <a href="/books/<%= book.id %>"><%= book.title %></a>

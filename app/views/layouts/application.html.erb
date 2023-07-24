@@ -14,6 +14,7 @@
 
   <body>
     <header>
+      <script src="https://kit.fontawesome.com/52ec04519a.js" crossorigin="anonymous"></script>
 　　　<nav class="navbar navar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <a class="navbar-brand" href="/">
@@ -26,35 +27,59 @@
 
                <% if user_signed_in? %>
                 <li class="nav-item">
-                 <a class="nav-link text-light" href="<%= user_path(current_user.id) %>">Home</a>
+                 <a class="nav-link text-light" href="<%= user_path(current_user.id) %>">
+                   <i class="fas fa-home"></i>
+                   Home
+                 </a>
                 </li>
 
                 <li class="nav-item">
-                 <a class="nav-link text-light" href="/users">Users</a>
+                 <a class="nav-link text-light" href="/users">
+                   <i class="fas fa-users"></i>
+                   Users
+                  </a>
                 </li>
 
                 <li class="nav-item">
-                 <a class="nav-link text-light" href="/books">Books</a>
+                 <a class="nav-link text-light" href="/books">
+                   <i class="fas fa-book-open"></i>
+                   Books
+                  </a>
                 </li>
 
                 <li class="nav-item">
-                 <a class="nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out">Log out</a>
+                 <a class="nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out">
+                   <i class="fas fa-sign-out-alt"></i>
+                   Log out
+                 </a>
                 </li>
                 <% else %>
                  <li class="nav-item">
-                 <a class="nav-link text-light" href="/">Home</a>
+                 <a class="nav-link text-light" href="/">
+                   <i class="fas fa-home"></i>
+                   Home
+                 </a>
                 </li>
 
                 <li class="nav-item">
-                 <a class="nav-link text-light" href="/homes/about">About</a>
+                 <a class="nav-link text-light" href="/home/about">
+                   <i class="fas fa-link"></i>
+                   About
+                 </a>
                 </li>
 
                 <li class="nav-item">
-                 <a class="nav-link text-light" href="/users/sign_up">Sign up</a>
+                 <a class="nav-link text-light" href="/users/sign_up">
+                   <i class="fas fa-user-plus"></i>
+                   Sign up
+                 </a>
                 </li>
 
                 <li class="nav-item">
-                 <a class="nav-link text-light" href="/users/sign_in">Log in</a>
+                 <a class="nav-link text-light" href="/users/sign_in">
+                   <i class="fas fa-sign-in-alt"></i>
+                   Log in
+                 </a>
                 </li>
                 <% end %>
 
